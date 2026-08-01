@@ -10,10 +10,9 @@ public class WebConfig implements WebMvcConfigurer {
     @Override
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/api/**")
-                .allowedOriginPatterns("*")   // MVP: cho phép mọi origin, sau deploy đổi thành domain cụ thể
+                .allowedOriginPatterns("https://class-planner-basv.vercel.app")
                 .allowedMethods("GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS")
                 .allowedHeaders("*")
                 .allowCredentials(false)
-                .maxAge(3600);
-    }
+                .maxAge(3600);    }
 }
